@@ -17,7 +17,7 @@ You can change CE and CSN in NRF24_RC.cpp
 #include "config.h"
 
 #if defined(NRF24_RX)
-/*
+
 // The sizeof this struct should not exceed 32 bytes
 struct RF24Data {
   byte throttle;
@@ -40,7 +40,7 @@ struct RF24AckPayload {
 };
 
 extern RF24Data nrf24Data;
-extern RF24AckPayload nrf24AckPayload;*/
+extern RF24AckPayload nrf24AckPayload;
 extern int16_t nrf24_rcData[RC_CHANS];
 
 void NRF24_Init();

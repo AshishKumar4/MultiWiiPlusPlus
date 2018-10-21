@@ -191,6 +191,7 @@ typedef struct {
   servo_conf_ servoConf[8];
   #if defined(GYRO_SMOOTHING)
     uint8_t Smoothing[3];
+    uint8_t AccSmoothing[3];
   #endif
   #if defined (FAILSAFE)
     int16_t failsafe_throttle;

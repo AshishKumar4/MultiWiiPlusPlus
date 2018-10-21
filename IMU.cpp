@@ -42,9 +42,14 @@ void computeIMU () {
   }
   #if defined(GYRO_SMOOTHING)
     static int16_t gyroSmooth[3] = {0,0,0};
+    static int16_t accSmooth[3] = {0,0,0};
     for (axis = 0; axis < 3; axis++) {
       imu.gyroData[axis] = (int16_t) ( ( (int32_t)((int32_t)gyroSmooth[axis] * (conf.Smoothing[axis]-1) )+imu.gyroData[axis]+1 ) / conf.Smoothing[axis]);
       gyroSmooth[axis] = imu.gyroData[axis];
+      /*imu.accADC[axis] = (int16_t) ( ( (int32_t)((int32_t)accSmooth[axis] * (conf.Smoothing[axis]-1) )+imu.accADC[axis]+1 ) / conf.Smoothing[axis]);
+      accSmooth[axis] = imu.accADC[axis];
+      imu.accSmooth[axis] = (int16_t) ( ( (int32_t)((int32_t)accSmooth[axis] * (conf.Smoothing[axis]-1) )+imu.accSmooth[axis]+1 ) / conf.Smoothing[axis]);
+      accSmooth[axis] = imu.accSmooth[axis];*/
     }
   #elif defined(TRI)
     static int16_t gyroYawSmooth = 0;

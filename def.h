@@ -2004,7 +2004,7 @@
     defined( ITG3200_LPF_20HZ)  || defined( ITG3200_LPF_10HZ)
   #error "you use one feature that is no longer supported or has undergone a name change"
 #endif
-
+/*
 #ifdef NRF24_RX
   #if (!defined(PROMINI))
     #error "Currently nRF24 RX is only supported for ATmega328P"
@@ -2013,5 +2013,5 @@
     #error "Currently nRF24 RX is only supported for QUADX, QUADP, Y4 or TRI configurations"
   #endif
 #endif
-
+*/
 #endif /* DEF_H_ */
